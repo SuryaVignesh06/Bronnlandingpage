@@ -1,0 +1,230 @@
+<!DOCTYPE html><html data-src-ver="764d9e6e" lang="en"><!DOCTYPE html><html data-src-ver="764d9e6e" lang="en"><head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog — Bronn</title>
+<meta name="description" content="Bronn is your AI business strategist. Tackle complex strategy, analyze burn, model scenarios, and generate board-ready decisions in minutes.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+<style>
+  :root {
+    /* Core backgrounds */
+    --bg:        #faf8f4;
+    --bg-2:      #f5f2ed;
+    --bg-3:      #edeae3;
+    --bg-dark:   #111110;
+    --bg-card:   #ffffff;
+
+    /* Borders */
+    --line:      rgba(26, 24, 18, 0.10);
+    --line-soft: rgba(26, 24, 18, 0.06);
+    --line-med:  rgba(26, 24, 18, 0.15);
+
+    /* Typography */
+    --text:    #1a1812;
+    --text-2:  #403d32;
+    --muted:   #7a776c;
+    --muted-2: #a09d95;
+
+    /* Accents */
+    --accent:      #c97c47;
+    --amber:       #c97c47;
+    --amber-soft:  rgba(201, 124, 71, 0.12);
+    --green:       #4a8c3a;
+    --green-soft:  rgba(74, 140, 58, 0.12);
+    --green-deep:  #2a5a20;
+    --teal:        #3b7370;
+    --warm:        #e6b896;
+    --forest:      #3a4d30;
+
+    /* Claude-style palette */
+    --cream:      #faf8f4;
+    --cream-2:    #f5f2ed;
+    --cream-3:    #edeae3;
+    --cream-soft: #faf8f4;
+    --ink:        #1a1812;
+    --ink-2:      #2d2b22;
+    --sage:       #a8b896;
+    --sage-soft:  #e2e8db;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--text); }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Typography classes */
+  .serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; }
+  .head  { font-family: 'Oswald', sans-serif; font-weight: 400; letter-spacing: 0.005em; line-height: 0.98; }
+  .mono  { font-family: 'JetBrains Mono', monospace; }
+
+  /* Layout */
+  .container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+  .container-narrow {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Utility */
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .eyebrow-accent {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    will-change: transform, opacity;
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: 0.1s; }
+  .reveal-d2 { transition-delay: 0.2s; }
+  .reveal-d3 { transition-delay: 0.3s; }
+  .reveal-d4 { transition-delay: 0.4s; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.22s ease, background 0.22s, color 0.22s,
+                border-color 0.22s, box-shadow 0.22s;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .btn-primary:hover {
+    background: #2d2b22;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26,24,18,0.18);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--line-med);
+  }
+  .btn-ghost:hover {
+    background: var(--bg-2);
+    transform: translateY(-1px);
+  }
+  .btn-accent {
+    background: var(--amber);
+    color: #fff;
+  }
+  .btn-accent:hover {
+    background: #b56c38;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,124,71,0.28);
+  }
+  .btn .arrow { transition: transform 0.25s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* Dividers */
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* Keyframes */
+  @keyframes blink        { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  @keyframes pulseDot     { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 1; transform: scale(1.5); } }
+  @keyframes orbFloat     { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes orbSpin      { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes barGrow      { from { transform: scaleY(0.05); } to { transform: scaleY(1); } }
+  @keyframes lineDraw     { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+  @keyframes shimmer      { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+  @keyframes fadeUp       { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes float        { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  @keyframes dashFlow     { to { stroke-dashoffset: -12; } }
+  @keyframes marquee      { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes pulseRing    {
+    0% { box-shadow: 0 0 0 0 rgba(201, 124, 71, 0.25); }
+    70% { box-shadow: 0 0 0 12px rgba(201, 124, 71, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(201, 124, 71, 0); }
+  }
+  @keyframes slideIn      { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes scaleIn      { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: scale(1); } }
+
+  /* Nav scroll state */
+  .nav-scrolled {
+    background: rgba(250, 248, 244, 0.92) !important;
+    box-shadow: 0 1px 0 rgba(26,24,18,0.08), 0 4px 24px rgba(26,24,18,0.06) !important;
+    border-bottom: 1px solid rgba(26,24,18,0.06) !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .container, .container-narrow { padding: 0 28px; }
+  }
+  @media (max-width: 768px) {
+    .container, .container-narrow { padding: 0 20px; }
+    .hide-mobile { display: none !important; }
+  }
+  @media (max-width: 480px) {
+    .container, .container-narrow { padding: 0 16px; }
+  }
+</style>
+
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="components/Orb.jsx"></script>
+<script type="text/babel" src="components/Mockups.jsx"></script>
+<script type="text/babel" src="components/MockupsV2.jsx"></script>
+<script type="text/babel" src="components/Hero.jsx"></script>
+<script type="text/babel" src="components/Sections.jsx"></script>
+<script type="text/babel" src="components/ChangelogApp.jsx"></script>
+
+</body></html>
