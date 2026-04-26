@@ -2,8 +2,14 @@
   "name": "bronn-landing-page",
   "version": "1.0.0",
   "description": "Premium landing page for Bronn",
+  "homepage": "https://SuryaVignesh06.github.io/Bronnlandingpage",
   "scripts": {
-    "dev": "npx serve -p 3000"
+    "dev": "npx serve -p 3000",
+    "predeploy": "git add . && git commit -m 'Prepare for deploy' || true",
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   },
   "dependencies": {
     "serve": "^14.2.4"
