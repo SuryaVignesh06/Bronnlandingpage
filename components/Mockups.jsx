@@ -1,8 +1,8 @@
-// Mockups.jsx — realistic Bronn desktop app screens used inside feature cards
+// Mockups.jsx — realistic Griffin desktop app screens used inside feature cards
 const { useState: useStateM, useEffect: useEffectM } = React;
 
 // Shared chrome
-function AppChrome({ children, title = 'Bronn — strategy desk', tint = 'var(--cream-3)' }) {
+function AppChrome({ children, title = 'Griffin — strategy desk', tint = 'var(--cream-3)' }) {
   return (
     <div style={{
       background: tint, borderRadius: 16, overflow: 'hidden',
@@ -31,7 +31,7 @@ function AppChrome({ children, title = 'Bronn — strategy desk', tint = 'var(--
 // 1) WELCOME — "Open Bronn"
 function MockupWelcome() {
   return (
-    <AppChrome title="bronn — welcome" tint="var(--cream-3)">
+    <AppChrome title="griffin — welcome" tint="var(--cream-3)">
       <div style={{ padding: '38px 32px 36px', minHeight: 320, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', position: 'relative' }}>
         {/* Logo orb */}
         <div style={{
@@ -41,7 +41,7 @@ function MockupWelcome() {
           boxShadow: '0 12px 30px -8px rgba(45,56,41,0.4)',
           animation: 'float 4s ease-in-out infinite',
         }}>
-          <span className="display" style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', color: 'var(--cream)', fontSize: 22 }}>B</span>
+          <span className="display" style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', color: 'var(--cream)', fontSize: 22 }}>G</span>
         </div>
         <div className="serif" style={{ fontSize: 32, marginBottom: 6 }}>good morning, alex.</div>
         <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 24 }}>let's look at the week ahead.</div>
@@ -75,7 +75,7 @@ function MockupConnect() {
     { n: 'QuickBooks', s: 'connected', dot: '#7a8b6a' },
   ];
   return (
-    <AppChrome title="bronn — sources" tint="var(--cream-3)">
+    <AppChrome title="griffin — sources" tint="var(--cream-3)">
       <div style={{ padding: '20px 22px 24px', minHeight: 320 }}>
         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 14 }}>
           <div className="serif" style={{ fontSize: 22 }}>connected sources</div>
@@ -111,7 +111,7 @@ function MockupConnect() {
 // 3) ADVISE — chat with Bronn (recommendation + chart)
 function MockupAdvise() {
   return (
-    <AppChrome title="bronn — advisor" tint="var(--cream-3)">
+    <AppChrome title="griffin — advisor" tint="var(--cream-3)">
       <div style={{ padding: '18px 20px 20px', minHeight: 320 }}>
         {/* User msg */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 12 }}>
@@ -126,7 +126,7 @@ function MockupAdvise() {
         {/* Bronn msg */}
         <div style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
           <div style={{ width: 24, height: 24, borderRadius: '50%', background: 'var(--forest)', flexShrink: 0, display: 'grid', placeItems: 'center' }}>
-            <span className="display" style={{ color: 'var(--cream)', fontSize: 11 }}>B</span>
+            <span className="display" style={{ color: 'var(--cream)', fontSize: 11 }}>G</span>
           </div>
           <div style={{
             background: 'var(--cream)', border: '1px solid var(--line-soft)',
@@ -176,7 +176,7 @@ function MockupScenarios() {
     { tag: 'C — usage tier', growth: '+24%', risk: 'med', dim: true, color: 'var(--cream-2)' },
   ];
   return (
-    <AppChrome title="bronn — scenarios" tint="var(--cream-3)">
+    <AppChrome title="griffin — scenarios" tint="var(--cream-3)">
       <div style={{ padding: '18px 20px 20px', minHeight: 320 }}>
         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 12 }}>
           <div className="serif" style={{ fontSize: 22 }}>scenario compare</div>
@@ -223,7 +223,7 @@ function MockupScenarios() {
 // 5) BOARD MEMO export
 function MockupMemo() {
   return (
-    <AppChrome title="bronn — board memo" tint="var(--cream-3)">
+    <AppChrome title="griffin — board memo" tint="var(--cream-3)">
       <div style={{ padding: '20px 24px 24px', minHeight: 320, position: 'relative' }}>
         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 14, paddingBottom: 10, borderBottom: '1px solid var(--line-soft)' }}>
           <div>

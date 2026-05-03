@@ -29,6 +29,16 @@ function DownloadApp() {
         });
       });
 
+      // Nav scroll state
+      const nav = document.getElementById('main-nav');
+      if (nav) {
+        ScrollTrigger.create({
+          start: 80,
+          onEnter: () => nav.classList.add('nav-scrolled'),
+          onLeaveBack: () => nav.classList.remove('nav-scrolled'),
+        });
+      }
+
       return () => {
         lenis.destroy();
         ScrollTrigger.getAll().forEach(st => st.kill());
@@ -50,3 +60,7 @@ function DownloadApp() {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(<DownloadApp />);
+
+
+
+

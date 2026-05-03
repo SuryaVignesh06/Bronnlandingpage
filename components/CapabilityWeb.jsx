@@ -11,7 +11,7 @@ const CAPABILITIES = [
   { id: 'hiring',     label: 'Hiring\nPlan',         x: 250, y: 190, desc: 'Model headcount against burn, growth targets, and fundraising timelines in real time.' },
 ];
 
-const CENTER = { x: 500, y: 290, label: 'BRONN', sub: 'Strategy Core' };
+const CENTER = { x: 500, y: 290, label: 'GRIFFIN', sub: 'Strategy Core' };
 const RADIUS_X = 300;
 const RADIUS_Y = 200;
 
@@ -32,21 +32,21 @@ function CapabilityWeb() {
   const activeNode = CAPABILITIES.find(c => c.id === active);
 
   return (
-    <section id="product" style={{ padding: '100px 0', borderTop: '1px solid var(--line)', background: 'var(--bg)' }}>
+    <section id="product" style={{ padding: '100px 0', background: 'var(--bg)' }}>
       <div className="container">
         {/* Section header */}
-        <div className="reveal" style={{ marginBottom: 70, maxWidth: 700 }}>
-          <div className="eyebrow" style={{ marginBottom: 16 }}>WHAT BRONN CAN DO</div>
+        <div className="reveal" style={{ marginBottom: 70, maxWidth: 1100 }}>
+          <div className="eyebrow" style={{ marginBottom: 16 }}>WHAT GRIFFIN CAN DO</div>
           <h2 className="serif" style={{
-            fontSize: 'clamp(38px, 5vw, 68px)',
+            fontSize: 'clamp(32px, 4.5vw, 60px)',
             color: 'var(--text)',
-            marginBottom: 18,
+            marginBottom: 20,
+            lineHeight: 1.1,
           }}>
-            Everything a strategy team needs,{' '}
-            <em style={{ color: 'var(--muted)' }}>in one place.</em>
+            Everything a strategy team needs, <em style={{ color: 'var(--muted)' }}>in one place.</em>
           </h2>
           <p style={{ fontSize: 17, color: 'var(--text-2)', lineHeight: 1.65, maxWidth: 560 }}>
-            Bronn connects your data, reasons over it, and returns defensible recommendations — not guesses.
+            Griffin connects your data, reasons over it, and returns defensible recommendations — not guesses.
           </p>
         </div>
 
@@ -54,12 +54,12 @@ function CapabilityWeb() {
         <div ref={ref} style={{ position: 'relative' }}>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: 60,
+            gridTemplateColumns: '1.4fr 1fr',
+            gap: 40,
             alignItems: 'center',
           }}>
             {/* Left: SVG web */}
-            <div style={{ position: 'relative', width: '100%', paddingBottom: '80%' }}>
+            <div style={{ position: 'relative', width: '100%', paddingBottom: '60%' }}>
               <div style={{ position: 'absolute', inset: 0 }}>
                 <svg
                   viewBox="0 0 1000 580"
@@ -122,19 +122,19 @@ function CapabilityWeb() {
                         onMouseLeave={() => !active && setActive(null)}
                       >
                         <circle
-                          cx={cap.x} cy={cap.y} r={isActive ? 46 : 40}
+                          cx={cap.x} cy={cap.y} r={isActive ? 54 : 48}
                           fill={isActive ? 'var(--ink)' : 'var(--bg-2)'}
                           stroke={isActive ? 'var(--amber)' : 'var(--line-med)'}
-                          strokeWidth={isActive ? 1.5 : 1}
+                          strokeWidth={isActive ? 2 : 1.2}
                           style={{ transition: 'all 0.35s ease' }}
                         />
                         {lines.map((line, li) => (
                           <text
                             key={li}
-                            x={cap.x} y={cap.y + (li - (lines.length - 1) / 2) * 14}
+                            x={cap.x} y={cap.y + (li - (lines.length - 1) / 2) * 16}
                             textAnchor="middle" dominantBaseline="middle"
                             fontFamily="'Inter', sans-serif"
-                            fontSize={11.5}
+                            fontSize={13}
                             fontWeight={isActive ? 600 : 500}
                             fill={isActive ? 'var(--cream)' : 'var(--text-2)'}
                             style={{ transition: 'fill 0.3s', userSelect: 'none' }}
@@ -148,21 +148,21 @@ function CapabilityWeb() {
 
                   {/* Center core node */}
                   <g>
-                    <circle cx={CENTER.x} cy={CENTER.y} r={64} fill="url(#coreGrad)" />
-                    <circle cx={CENTER.x} cy={CENTER.y} r={64} fill="none"
+                    <circle cx={CENTER.x} cy={CENTER.y} r={80} fill="url(#coreGrad)" />
+                    <circle cx={CENTER.x} cy={CENTER.y} r={80} fill="none"
                       stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
-                    <text x={CENTER.x} y={CENTER.y - 8} textAnchor="middle"
-                      fontFamily="'Oswald', sans-serif" fontSize={26} fontWeight={500}
+                    <text x={CENTER.x} y={CENTER.y - 10} textAnchor="middle"
+                      fontFamily="'Oswald', sans-serif" fontSize={32} fontWeight={500}
                       fill="rgba(255,255,255,0.92)" letterSpacing="0.08em">
-                      BRONN
+                      GRIFFIN
                     </text>
-                    <text x={CENTER.x} y={CENTER.y + 14} textAnchor="middle"
-                      fontFamily="'JetBrains Mono', monospace" fontSize={9}
+                    <text x={CENTER.x} y={CENTER.y + 18} textAnchor="middle"
+                      fontFamily="'JetBrains Mono', monospace" fontSize={11}
                       fill="rgba(255,255,255,0.35)" letterSpacing="0.2em">
                       STRATEGY CORE
                     </text>
                     {/* Live dot */}
-                    <circle cx={CENTER.x + 50} cy={CENTER.y - 50} r={4} fill="var(--green)">
+                    <circle cx={CENTER.x + 60} cy={CENTER.y - 60} r={5} fill="var(--green)">
                       <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
                     </circle>
                   </g>
@@ -192,10 +192,10 @@ function CapabilityWeb() {
                         onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-2)'; e.currentTarget.style.borderColor = 'var(--line)'; e.currentTarget.style.transform = ''; }}
                       >
                         <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--amber)', flexShrink: 0 }}/>
-                        <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--text)' }}>
+                        <span style={{ fontSize: 16, fontWeight: 500, color: 'var(--text)' }}>
                           {cap.label.replace('\n', ' ')}
                         </span>
-                        <span style={{ marginLeft: 'auto', fontSize: 16, color: 'var(--muted)', opacity: 0.4 }}>→</span>
+                        <span style={{ marginLeft: 'auto', fontSize: 18, color: 'var(--muted)', opacity: 0.4 }}>→</span>
                       </button>
                     ))}
                   </div>
@@ -227,16 +227,16 @@ function CapabilityWeb() {
                   </div>
 
                   <h3 className="serif" style={{
-                    fontSize: 'clamp(30px, 4vw, 50px)',
-                    color: 'var(--text)', marginBottom: 20, lineHeight: 1.15,
+                    fontSize: 'clamp(34px, 5vw, 56px)',
+                    color: 'var(--text)', marginBottom: 20, lineHeight: 1.1,
                   }}>
                     {activeNode.label.replace('\n', ' ')}
                   </h3>
-                  <p style={{ fontSize: 18, color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 36, maxWidth: '42ch' }}>
+                  <p style={{ fontSize: 20, color: 'var(--text-2)', lineHeight: 1.7, marginBottom: 40, maxWidth: '42ch' }}>
                     {activeNode.desc}
                   </p>
                   <a href="download.html" className="btn btn-primary">
-                    Try it in Bronn <span className="arrow">→</span>
+                    Try it in Griffin <span className="arrow">→</span>
                   </a>
                 </div>
               )}

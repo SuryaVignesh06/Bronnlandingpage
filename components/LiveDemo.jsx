@@ -1,4 +1,4 @@
-// LiveDemo.jsx — interactive Bronn sandbox
+// LiveDemo.jsx — interactive Griffin sandbox
 const { useState: useStateD } = React;
 
 const SAMPLE_PROMPTS = [
@@ -19,7 +19,7 @@ function LiveDemo() {
     if (!q || loading) return;
     setLoading(true); setError(null); setResponse(null);
     try {
-      const sys = `You are Bronn, an AI business strategist. Answer the user's strategic question in this exact JSON format and nothing else:
+      const sys = `You are Griffin, an AI business strategist. Answer the user's strategic question in this exact JSON format and nothing else:
 {"recommendation": "one short sentence — the call to make", "reasoning": ["3-4 short tight phrases"], "risks": ["2 short risk phrases"], "confidence": 0.78}
 Be specific, opinionated, concise. No fluff.`;
       const result = await window.claude.complete({
@@ -29,7 +29,7 @@ Be specific, opinionated, concise. No fluff.`;
       if (m) setResponse(JSON.parse(m[0]));
       else setResponse({ recommendation: result, reasoning: [], risks: [], confidence: 0.6 });
     } catch (e) {
-      setError('Bronn is offline in this preview. Try a sample prompt.');
+      setError('Griffin is offline in this preview. Try a sample prompt.');
     } finally {
       setLoading(false);
     }
@@ -46,23 +46,23 @@ Be specific, opinionated, concise. No fluff.`;
             <div>
               <div className="eyebrow" style={{ marginBottom: 18, color: '#5a4d57' }}>— 05 / Try it</div>
               <h2 className="serif" style={{ fontSize: 'clamp(48px, 6vw, 80px)', color: 'var(--ink)', letterSpacing: '-0.015em' }}>
-                Ask Bronn<br/>
+                Ask Griffin<br/>
                 <em style={{ fontStyle: 'italic', color: '#5a4d57' }}>a question.</em>
               </h2>
             </div>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: 'var(--ink-2)', maxWidth: 460 }}>
-              Live, in-browser. Pose a real strategic question — Bronn returns a recommendation, its reasoning, and the risks. A slim sandbox; the desktop app does much more.
+              Live, in-browser. Pose a real strategic question — Griffin returns a recommendation, its reasoning, and the risks. A slim sandbox; the desktop app does much more.
             </p>
           </div>
 
           <div style={{ background: 'var(--cream-3)', borderRadius: 18, overflow: 'hidden', border: '1px solid var(--line-soft)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 18px', borderBottom: '1px solid var(--line-soft)', background: 'rgba(245,239,230,0.5)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 18px', borderBottom: '1px solid var(--line-soft)', background: 'rgba(255,255,255,0.5)' }}>
               <div style={{ display: 'flex', gap: 6 }}>
                 <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#e6b8a8' }}></span>
                 <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#e6d5a8' }}></span>
                 <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#b8d0a4' }}></span>
               </div>
-              <span className="mono" style={{ fontSize: 11, color: 'var(--muted)' }}>bronn — interactive sandbox</span>
+              <span className="mono" style={{ fontSize: 11, color: 'var(--muted)' }}>griffin — interactive sandbox</span>
               <span className="mono" style={{ fontSize: 11, color: '#7a8b6a' }}>● connected</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', minHeight: 380 }}>
@@ -100,14 +100,14 @@ Be specific, opinionated, concise. No fluff.`;
                   </div>
                 </div>
                 <button onClick={() => ask()} disabled={loading || !prompt.trim()} className="btn btn-primary" style={{ alignSelf: 'flex-start', marginTop: 'auto', opacity: loading || !prompt.trim() ? 0.5 : 1 }}>
-                  {loading ? 'Thinking…' : 'Ask Bronn'} <span className="arrow">→</span>
+                  {loading ? 'Thinking…' : 'Ask Griffin'} <span className="arrow">→</span>
                 </button>
               </div>
               <div style={{ padding: '28px 28px', background: 'var(--cream)', minHeight: 380 }}>
-                <div className="mono" style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '0.1em', marginBottom: 14 }}>BRONN'S ANSWER</div>
+                <div className="mono" style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '0.1em', marginBottom: 14 }}>GRIFFIN'S ANSWER</div>
                 {!response && !loading && !error && (
                   <div style={{ color: 'var(--muted)', fontSize: 14, lineHeight: 1.6, marginTop: 16 }}>
-                    Pose a question on the left, or pick a sample. Bronn returns a recommendation, the reasoning, and the risks worth tracking.
+                    Pose a question on the left, or pick a sample. Griffin returns a recommendation, the reasoning, and the risks worth tracking.
                   </div>
                 )}
                 {loading && <ThinkingState />}
@@ -182,3 +182,7 @@ function Answer({ response }) {
 }
 
 window.LiveDemo = LiveDemo;
+
+
+
+

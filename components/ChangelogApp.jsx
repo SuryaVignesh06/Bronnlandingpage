@@ -22,6 +22,16 @@ function ChangelogApp() {
         });
       });
 
+      // Nav scroll state
+      const nav = document.getElementById('main-nav');
+      if (nav) {
+        ScrollTrigger.create({
+          start: 80,
+          onEnter: () => nav.classList.add('nav-scrolled'),
+          onLeaveBack: () => nav.classList.remove('nav-scrolled'),
+        });
+      }
+
       return () => {
         lenis.destroy();
         ScrollTrigger.getAll().forEach(st => st.kill());
@@ -31,9 +41,9 @@ function ChangelogApp() {
 
   const logs = [
     { version: '2.4', date: 'April 2026', title: 'Scenario Engine & Team Workspaces', desc: 'Introduced the Scenario Engine allowing parallel modeling of burn rates and strategic decisions without affecting the baseline. Added robust team workspace support with role-based access control.' },
-    { version: '2.3', date: 'February 2026', title: 'Snowflake & Hubspot Integrations', desc: 'Directly sync your enterprise data warehouse into Bronn. Real-time metrics stream straight into your strategic models.' },
+    { version: '2.3', date: 'February 2026', title: 'Snowflake & Hubspot Integrations', desc: 'Directly sync your enterprise data warehouse into Griffin. Real-time metrics stream straight into your strategic models.' },
     { version: '2.2', date: 'January 2026', title: 'Board-Ready Exports', desc: 'Export your strategy discussions directly into beautiful, annotated PDFs and presentation decks.' },
-    { version: '2.0', date: 'November 2025', title: 'The Intelligence Update', desc: 'Completely overhauled the core AI strategy models. Bronn now understands multi-year runway projections natively.' }
+    { version: '2.0', date: 'November 2025', title: 'The Intelligence Update', desc: 'Completely overhauled the core AI strategy models. Griffin now understands multi-year runway projections natively.' }
   ];
 
   return (
@@ -43,7 +53,7 @@ function ChangelogApp() {
         <div className="container-narrow">
           <div className="reveal in" style={{ marginBottom: 60 }}>
             <div className="eyebrow" style={{ marginBottom: 16 }}>CHANGELOG</div>
-            <h1 className="serif" style={{ fontSize: 'clamp(40px, 6vw, 64px)', marginBottom: 16, lineHeight: 1.1 }}>What's new in Bronn.</h1>
+            <h1 className="serif" style={{ fontSize: 'clamp(40px, 6vw, 64px)', marginBottom: 16, lineHeight: 1.1 }}>What's new in Griffin.</h1>
             <p style={{ fontSize: 18, color: 'var(--text-2)' }}>We push updates constantly to make your strategy smoother.</p>
           </div>
 
@@ -70,3 +80,7 @@ function ChangelogApp() {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(<ChangelogApp />);
+
+
+
+

@@ -2,7 +2,7 @@
 const { useState: useStateM2, useEffect: useEffectM2, useRef: useRefM2 } = React;
 
 // ───── Shared App Window Chrome ─────
-function AppWindow({ children, title = 'Bronn', light = false }) {
+function AppWindow({ children, title = 'Griffin', light = false }) {
   const bg = light ? '#f7f5f2' : '#111110';
   const border = light ? '1px solid rgba(0,0,0,0.08)' : '1px solid rgba(255,255,255,0.07)';
   const titleColor = light ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.25)';
@@ -36,7 +36,7 @@ function AppWindow({ children, title = 'Bronn', light = false }) {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// CARD 1 — OPEN BRONN: macOS Desktop + App Open Animation
+// CARD 1 — OPEN GRIFFIN: macOS Desktop + App Open Animation
 // ─────────────────────────────────────────────────────────────────
 function MockupNavBar() {
   const [phase, setPhase] = useStateM2('desktop'); // desktop → hovering → clicked → opened
@@ -86,7 +86,7 @@ function MockupNavBar() {
       }}>
         <div style={{ display: 'flex', gap: 18, alignItems: 'center' }}>
           <span style={{ fontWeight: 700, fontSize: 14 }}>⌘</span>
-          {isOpened ? <span style={{ fontWeight: 600, color: '#fff' }}>Bronn</span> : <span style={{ fontWeight: 600, color: '#fff' }}>Finder</span>}
+          {isOpened ? <span style={{ fontWeight: 600, color: '#fff' }}>Griffin</span> : <span style={{ fontWeight: 600, color: '#fff' }}>Finder</span>}
           {['File', 'Edit', 'View', 'Window', 'Help'].map(m => (
             <span key={m} style={{ opacity: 0.5, fontSize: 12 }}>{m}</span>
           ))}
@@ -123,7 +123,7 @@ function MockupNavBar() {
             border: '1px solid var(--line)', marginBottom: 18, display: 'grid', placeItems: 'center',
             boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
           }}>
-            <span className="head" style={{ color: 'var(--text)', fontSize: 20, fontWeight: 500 }}>B</span>
+            <span className="head" style={{ color: 'var(--text)', fontSize: 20, fontWeight: 500 }}>G</span>
           </div>
           <div style={{ fontFamily: 'Oswald', fontSize: 28, fontWeight: 400, color: '#f5efe6', marginBottom: 6 }}>Good morning, Alex.</div>
           <div style={{ fontSize: 13, color: 'var(--text-2)', marginBottom: 26 }}>Here's your strategic brief for the week.</div>
@@ -153,7 +153,7 @@ function MockupNavBar() {
         <DockIcon app="Safari" active={false} phase={phase} />
         <DockIcon app="Messages" active={false} phase={phase} />
         <div style={{ width: 1, height: 24, background: 'rgba(255,255,255,0.2)', margin: '0 2px' }}></div>
-        <DockIcon app="Bronn" active={isOpened} phase={phase} />
+        <DockIcon app="Griffin" active={isOpened} phase={phase} />
         <div style={{ width: 1, height: 24, background: 'rgba(255,255,255,0.2)', margin: '0 2px' }}></div>
         <DockIcon app="Mail" active={false} phase={phase} />
         <DockIcon app="Trash" active={false} phase={phase} />
@@ -163,8 +163,8 @@ function MockupNavBar() {
 }
 
 function DockIcon({ app, active, phase }) {
-  const isBronn = app === 'Bronn';
-  const hovering = isBronn && (phase === 'hovering' || phase === 'clicked');
+  const isGriffin = app === 'Griffin';
+  const hovering = isGriffin && (phase === 'hovering' || phase === 'clicked');
   
   const getIcon = () => {
     switch(app) {
@@ -173,7 +173,7 @@ function DockIcon({ app, active, phase }) {
       case 'Messages': return <svg viewBox="0 0 32 32" fill="none"><path d="M28 15.5c0 6.35-5.37 11.5-12 11.5-1.3 0-2.55-.2-3.7-.58L5 28.5l2.12-5.95C5.17 20.65 4 18.2 4 15.5 4 9.15 9.37 4 16 4s12 5.15 12 11.5z" fill="#34C759"/></svg>;
       case 'Mail': return <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="7" width="24" height="18" rx="4" fill="#007AFF"/><path d="M4 9l12 8 12-8" stroke="#fff" strokeWidth="2"/></svg>;
       case 'Trash': return <svg viewBox="0 0 32 32" fill="none"><rect x="8" y="8" width="16" height="18" rx="2" fill="rgba(255,255,255,0.3)"/><path d="M6 8h20M12 5h8" stroke="rgba(255,255,255,0.5)" strokeWidth="2" strokeLinecap="round"/></svg>;
-      case 'Bronn': return <span className="head" style={{ color: '#fff', fontSize: 20 }}>B</span>;
+      case 'Griffin': return <span className="head" style={{ color: '#fff', fontSize: 20 }}>G</span>;
       default: return null;
     }
   };
@@ -181,12 +181,12 @@ function DockIcon({ app, active, phase }) {
   return (
     <div style={{
       width: 42, height: 42, borderRadius: 10,
-      background: isBronn ? '#1a1a18' : 'transparent',
-      border: isBronn ? '1px solid rgba(255,255,255,0.1)' : 'none',
+      background: isGriffin ? '#1a1a18' : 'transparent',
+      border: isGriffin ? '1px solid rgba(255,255,255,0.1)' : 'none',
       display: 'grid', placeItems: 'center', position: 'relative',
       transform: hovering ? 'scale(1.18) translateY(-8px)' : 'scale(1)',
       transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-      boxShadow: isBronn && hovering ? '0 12px 24px rgba(0,0,0,0.4)' : 'none'
+      boxShadow: isGriffin && hovering ? '0 12px 24px rgba(0,0,0,0.4)' : 'none'
     }}>
       <div style={{ width: 30, height: 30, display: 'grid', placeItems: 'center' }}>
         {getIcon()}
@@ -245,7 +245,7 @@ function MockupChat() {
         display: isSearch ? 'block' : 'none',
         textAlign: 'center'
       }}>
-        <div className="mono" style={{ fontSize: 10, letterSpacing: '0.2em', color: 'var(--accent)', marginBottom: 20, textTransform: 'uppercase' }}>Ask Bronn Anything</div>
+        <div className="mono" style={{ fontSize: 10, letterSpacing: '0.2em', color: 'var(--accent)', marginBottom: 20, textTransform: 'uppercase' }}>Ask Griffin Anything</div>
         <div style={{
           background: '#fff', padding: '10px 12px 10px 24px', borderRadius: 100,
           boxShadow: '0 20px 50px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02)',
@@ -296,8 +296,8 @@ function MockupChat() {
         {/* Dashboard Sidebar */}
         <div style={{ width: 200, borderRight: '1px solid rgba(255,255,255,0.06)', background: '#0a0a0a', padding: '24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 40 }}>
-            <div style={{ width: 28, height: 28, borderRadius: 8, background: '#fff', color: '#000', display: 'grid', placeItems: 'center', fontSize: 14, fontWeight: 700 }}>B</div>
-            <span style={{ fontSize: 15, fontWeight: 500, letterSpacing: '-0.02em' }}>Bronn</span>
+            <div style={{ width: 28, height: 28, borderRadius: 8, background: '#fff', color: '#000', display: 'grid', placeItems: 'center', fontSize: 14, fontWeight: 700 }}>G</div>
+            <span style={{ fontSize: 15, fontWeight: 500, letterSpacing: '-0.02em' }}>Griffin</span>
           </div>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -419,7 +419,7 @@ function MockupGraph() {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   return (
-    <AppWindow title="Bronn — Scenario Engine" light={false}>
+    <AppWindow title="Griffin — Scenario Engine" light={false}>
       <div ref={graphRef} style={{ padding: '24px', minHeight: 360, background: '#101010' }}>
         {/* Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24 }}>

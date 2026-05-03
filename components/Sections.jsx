@@ -8,7 +8,7 @@ function DownloadBanner() {
           <div>
             <div className="eyebrow" style={{color:'rgba(255,255,255,0.35)',marginBottom:10}}>AVAILABLE NOW</div>
             <h2 className="serif" style={{fontSize:'clamp(24px,3vw,38px)',color:'#fff',fontWeight:400}}>
-              Download Bronn and start your first <em style={{color:'var(--warm)'}}>strategic decision.</em>
+              Download Griffin and start your first <em style={{color:'var(--warm)'}}>strategic decision.</em>
             </h2>
           </div>
           <div style={{display:'flex',gap:12,flexWrap:'wrap'}}>
@@ -23,7 +23,7 @@ function DownloadBanner() {
 
 function HowItWorks() {
   const steps = [
-    {n:'01',title:'Open Bronn',copy:'Launch the desktop app. Bronn greets you with the week ahead — drawn from everything it already knows.',mockup:<MockupNavBar/>},
+    {n:'01',title:'Open Griffin',copy:'Launch the desktop app. Griffin greets you with the week ahead — drawn from everything it already knows.',mockup:<MockupNavBar/>},
     {n:'02',title:'Ask Anything',copy:'Type the strategic question on your mind. Get a recommendation, the math behind it, and the next move.',mockup:<MockupChat/>},
     {n:'03',title:'See the Growth',copy:'Model burn, runway, and pricing. Show your investors the math with beautiful projections.',mockup:<MockupGraph/>},
   ];
@@ -102,7 +102,7 @@ function UseCases() {
   const cases = [
     {tag:'FOR FOUNDERS',title:'Pressure-test the next 18 months.',copy:'Model burn, runway, hiring, pricing. Show your investors the math.',prompts:['What is our path to Series A?','Cut burn 20% — what goes first?','When should we raise?']},
     {tag:'FOR STRATEGY TEAMS',title:'Replace the all-hands deck.',copy:'Generate board-ready scenarios in hours. Sources and contingencies handled.',prompts:['Map our Q3 expansion risks','Compare three pricing tiers','Build the board scenario pack']},
-    {tag:'FOR OPERATORS',title:'Decide faster, defend better.',copy:'When the CFO asks why — Bronn has already shown you the path not taken.',prompts:['Why this market vs. LATAM?','Show the hiring plan math','What is our worst-case runway?']},
+    {tag:'FOR OPERATORS',title:'Decide faster, defend better.',copy:'When the CFO asks why — Griffin has already shown you the path not taken.',prompts:['Why this market vs. LATAM?','Show the hiring plan math','What is our worst-case runway?']},
   ];
   const c = cases[tab];
   return (
@@ -128,7 +128,7 @@ function UseCases() {
           <div>
             <h3 className="serif" style={{fontSize:'clamp(24px,3vw,42px)',color:'var(--text)',marginBottom:18,lineHeight:1.2}}>{c.title}</h3>
             <p style={{fontSize:17,color:'var(--text-2)',lineHeight:1.7,marginBottom:32}}>{c.copy}</p>
-            <a href="download.html" className="btn btn-primary">Try Bronn free <span className="arrow">\u2192</span></a>
+            <a href="download.html" className="btn btn-primary">Try Griffin free <span className="arrow">→</span></a>
           </div>
           <div style={{background:'var(--bg-2)',borderRadius:16,border:'1px solid var(--line)',padding:28}}>
             <div className="eyebrow" style={{marginBottom:18}}>SAMPLE QUESTIONS</div>
@@ -181,7 +181,7 @@ function Pricing() {
               e.currentTarget.style.boxShadow = t.hot ? '0 40px 100px -20px rgba(26,24,18,0.22), 0 16px 40px rgba(26,24,18,0.1)' : '0 10px 40px -10px rgba(26,24,18,0.05)';
             }}
             >
-              {t.hot && <div style={{position:'absolute',inset:0,borderRadius:24,background:'radial-gradient(ellipse at top, rgba(201,124,71,0.15), transparent 70%)',pointerEvents:'none'}} />}
+              {t.hot && <div style={{position:'absolute',inset:0,borderRadius:24,background:'radial-gradient(ellipse at top, rgba(74,140,58,0.15), transparent 70%)',pointerEvents:'none'}} />}
               <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:6}}>
                 <div className="head" style={{fontSize:26,letterSpacing:'0.05em'}}>{t.name}</div>
                 {t.hot && <span className="mono" style={{fontSize:10,color:'var(--amber)',letterSpacing:'0.08em'}}>RECOMMENDED</span>}
@@ -213,25 +213,22 @@ function Pricing() {
 function DownloadCTA() {
   return (
     <section id="download" style={{padding:'120px 0',borderTop:'1px solid var(--line)',position:'relative',overflow:'hidden'}}>
-      <div style={{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',width:700,height:500,background:'radial-gradient(ellipse,rgba(201,124,71,0.06),transparent 65%)',pointerEvents:'none'}}/>
+      <div style={{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',width:700,height:500,background:'radial-gradient(ellipse,rgba(74,140,58,0.06),transparent 65%)',pointerEvents:'none'}}/>
       <div className="container reveal" style={{textAlign:'center'}}>
         <div className="eyebrow" style={{marginBottom:24}}>GET STARTED</div>
         <h2 className="serif" style={{fontSize:'clamp(44px,7vw,96px)',color:'var(--text)',marginBottom:24,lineHeight:1.05}}>
           The next call <em style={{color:'var(--muted)'}}>is on you.</em>
         </h2>
         <p style={{fontSize:18,color:'var(--text-2)',maxWidth:'46ch',margin:'0 auto 44px',lineHeight:1.65}}>
-          Download Bronn. Connect a source. Ask the question that has been keeping you up.
+          Download Griffin. Connect a source. Ask the question that has been keeping you up.
         </p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap',marginBottom:24}}>
           <a href="download.html" className="btn btn-primary" style={{padding:'16px 28px',fontSize:15}}>
-            Download for Mac <span className="arrow">\u2192</span>
+            Download for Mac <span className="arrow">→</span>
           </a>
           <a href="download.html" className="btn btn-ghost" style={{padding:'16px 28px',fontSize:15}}>
-            Download for Windows <span className="arrow">\u2192</span>
+            Download for Windows <span className="arrow">→</span>
           </a>
-        </div>
-        <div className="mono" style={{fontSize:11,color:'var(--muted)',display:'flex',justifyContent:'center',gap:20,flexWrap:'wrap'}}>
-          <span>v 2.4.1</span><span>\u00B7</span><span>macOS 12+ / Windows 10+</span><span>\u00B7</span><span>84 mb</span><span>\u00B7</span><span>code-signed</span>
         </div>
       </div>
     </section>
@@ -246,9 +243,9 @@ function Footer() {
           <div>
             <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:16}}>
               <span style={{width:30,height:30,borderRadius:8,background:'var(--ink)',display:'grid',placeItems:'center'}}>
-                <span className="head" style={{color:'var(--cream)',fontSize:14,fontWeight:600}}>B</span>
+                <span className="head" style={{color:'var(--cream)',fontSize:14,fontWeight:600}}>G</span>
               </span>
-              <span className="head" style={{fontSize:20,fontWeight:500,letterSpacing:'0.06em'}}>BRONN</span>
+              <span className="head" style={{fontSize:20,fontWeight:500,letterSpacing:'0.06em'}}>GRIFFIN</span>
             </div>
             <p style={{fontSize:14,color:'var(--text-2)',maxWidth:300,lineHeight:1.65,opacity:0.8}}>
               The AI strategist for modern businesses. Built for the room where the call gets made.
@@ -266,9 +263,9 @@ function Footer() {
             </div>
           ))}
         </div>
-        <div className="head" style={{fontSize:'clamp(72px,14vw,200px)',lineHeight:0.85,color:'var(--bg-3)',marginBottom:24,fontWeight:600,letterSpacing:'0.02em',userSelect:'none'}}>BRONN.</div>
+        <div className="head" style={{fontSize:'clamp(72px,14vw,200px)',lineHeight:0.85,color:'var(--bg-3)',marginBottom:24,fontWeight:600,letterSpacing:'0.02em',userSelect:'none'}}>GRIFFIN.</div>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',borderTop:'1px solid var(--line)',paddingTop:18,flexWrap:'wrap',gap:10}}>
-          <span className="mono" style={{fontSize:11,color:'var(--muted)'}}>© 2026 BRONN LABS · ALL RIGHTS RESERVED</span>
+          <span className="mono" style={{fontSize:11,color:'var(--muted)'}}>© 2026 GRIFFIN LABS · ALL RIGHTS RESERVED</span>
           <span className="mono" style={{fontSize:11,color:'var(--muted)'}}>MADE WITH INTENT · SAN FRANCISCO</span>
         </div>
       </div>

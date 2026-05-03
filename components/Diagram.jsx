@@ -8,7 +8,7 @@ function StrategyDiagram() {
     { id: 'data',     x: 80,  y: 220, label: 'DATA INGEST',    sub: '14 sources',   kind: 'input' },
     { id: 'signal',   x: 260, y: 120, label: 'MARKET SIGNALS', sub: 'real-time',    kind: 'input' },
     { id: 'finance',  x: 260, y: 320, label: 'FINANCIALS',     sub: 'Q3 close',     kind: 'input' },
-    { id: 'core',     x: 480, y: 220, label: 'BRONN CORE',     sub: 'reasoning',    kind: 'core' },
+    { id: 'core',     x: 480, y: 220, label: 'GRIFFIN CORE',   sub: 'reasoning',    kind: 'core' },
     { id: 'scenario', x: 700, y: 120, label: 'SCENARIOS',      sub: '4 generated',  kind: 'output' },
     { id: 'risk',     x: 700, y: 320, label: 'RISK MAP',       sub: 'low · 0.18',   kind: 'output' },
     { id: 'decision', x: 900, y: 220, label: 'DECISION',       sub: 'recommended',  kind: 'final' },
@@ -41,12 +41,11 @@ function StrategyDiagram() {
           <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#d4c9b3' }}></span>
           <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#d4c9b3' }}></span>
           <span className="mono" style={{ marginLeft: 14, fontSize: 11, color: 'var(--muted)' }}>
-            bronn — strategy graph · acme corp · q4 planning
+            griffin — strategy graph · acme corp · q4 planning
           </span>
         </div>
         <div className="mono" style={{ fontSize: 11, color: 'var(--muted)', display: 'flex', gap: 16 }}>
           <span>● live</span>
-          <span>v 2.4</span>
         </div>
       </div>
 
@@ -151,7 +150,7 @@ function StrategyDiagram() {
           fontSize: 12, lineHeight: 1.5,
           boxShadow: '0 10px 30px rgba(22,23,15,0.18)',
         }}>
-          <div className="mono" style={{ fontSize: 10, opacity: 0.55, marginBottom: 4, letterSpacing: '0.08em' }}>BRONN · ANALYSIS</div>
+          <div className="mono" style={{ fontSize: 10, opacity: 0.55, marginBottom: 4, letterSpacing: '0.08em' }}>GRIFFIN · ANALYSIS</div>
           <div>Recommend phased rollout. Cap downside at 8.4% — release Scenario B in Q1, hold C as contingency.</div>
         </div>
 

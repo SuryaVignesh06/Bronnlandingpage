@@ -22,6 +22,16 @@ function ContactApp() {
         });
       });
 
+      // Nav scroll state
+      const nav = document.getElementById('main-nav');
+      if (nav) {
+        ScrollTrigger.create({
+          start: 80,
+          onEnter: () => nav.classList.add('nav-scrolled'),
+          onLeaveBack: () => nav.classList.remove('nav-scrolled'),
+        });
+      }
+
       return () => {
         lenis.destroy();
         ScrollTrigger.getAll().forEach(st => st.kill());
@@ -34,9 +44,9 @@ function ContactApp() {
       <Nav />
       <main style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '160px 0 80px' }}>
         <div className="container" style={{ maxWidth: 600, width: '100%' }}>
-          <div className="reveal in" style={{ background: 'var(--bg-card)', padding: '40px 48px', borderRadius: 24, border: '1px solid var(--line)', boxShadow: '0 20px 60px -10px rgba(26,24,18,0.08)' }}>
+          <div className="reveal in" style={{ background: 'var(--bg-card)', padding: '40px 48px', borderRadius: 24, border: '1px solid var(--line)', boxShadow: '0 20px 60px -10px rgba(0,0,0,0.08)' }}>
             <h1 className="serif" style={{ fontSize: 36, color: 'var(--text)', marginBottom: 8 }}>Contact Sales</h1>
-            <p style={{ color: 'var(--text-2)', fontSize: 15, marginBottom: 32 }}>Let's discuss how Bronn can accelerate your strategy.</p>
+            <p style={{ color: 'var(--text-2)', fontSize: 15, marginBottom: 32 }}>Let's discuss how Griffin can accelerate your strategy.</p>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               <div>
@@ -67,3 +77,7 @@ function ContactApp() {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(<ContactApp />);
+
+
+
+

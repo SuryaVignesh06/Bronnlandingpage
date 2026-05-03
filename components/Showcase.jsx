@@ -84,7 +84,7 @@ function HeroShowcase() {
       }}>
         <div style={{ width: '100%', maxWidth: 680, padding: '0 32px' }}>
           <div className="mono" style={{ fontSize: 10.5, color: 'var(--amber)', letterSpacing: '0.18em', marginBottom: 16, textAlign: 'center', opacity: isSubmitting ? 0 : 1, transition: 'opacity 0.3s' }}>
-            ASK BRONN ANYTHING
+            ASK GRIFFIN ANYTHING
           </div>
           
           {/* Search bar */}
@@ -154,13 +154,13 @@ function HeroShowcase() {
         willChange: 'transform, opacity',
         maxWidth: 960, margin: '0 auto', width: '100%'
       }}>
-        <BronnDesk question={QUESTIONS[qIdx % QUESTIONS.length]} animateKey={cycle} />
+        <GriffinDesk question={QUESTIONS[qIdx % QUESTIONS.length]} animateKey={cycle} />
       </div>
     </div>
   );
 }
 
-function BronnDesk({ question, animateKey }) {
+function GriffinDesk({ question, animateKey }) {
   return (
     <div key={animateKey} style={{
       background: 'var(--bg-card)',
@@ -176,7 +176,7 @@ function BronnDesk({ question, animateKey }) {
           <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#ffbd2e' }}></span>
           <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#27c93f' }}></span>
         </div>
-        <span className="mono" style={{ fontSize: 10.5, color: 'var(--muted)' }}>bronn — strategy desk · acme corp</span>
+        <span className="mono" style={{ fontSize: 10.5, color: 'var(--muted)' }}>griffin — strategy desk · acme corp</span>
         <span className="mono" style={{ fontSize: 10.5, color: 'var(--green)', display: 'flex', alignItems: 'center', gap: 5 }}>
           <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--green)', animation: 'pulseDot 2s infinite' }}></span>
           synced
@@ -223,7 +223,7 @@ function BronnDesk({ question, animateKey }) {
           {/* Bronn reply */}
           <div style={{ display: 'flex', gap: 10, animation: 'fadeUp 0.5s ease 0.5s both' }}>
             <div style={{ width: 24, height: 24, borderRadius: '50%', background: 'var(--bg-3)', border: '1px solid var(--line)', flexShrink: 0, display: 'grid', placeItems: 'center' }}>
-              <span className="head" style={{ color: 'var(--text)', fontSize: 10 }}>B</span>
+              <span className="head" style={{ color: 'var(--text)', fontSize: 10 }}>G</span>
             </div>
             <div style={{ background: 'var(--bg-card)', border: '1px solid var(--line)', padding: '13px 15px', borderRadius: '14px 14px 14px 4px', fontSize: 13, lineHeight: 1.6, color: 'var(--text-2)', flex: 1, boxShadow: '0 4px 12px rgba(26,24,18,0.03)' }}>
               <div style={{ marginBottom: 12 }}>

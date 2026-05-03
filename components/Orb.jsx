@@ -1,7 +1,7 @@
-// Orb.jsx — animated globe/orb with "BRONN" wordmark
+// Orb.jsx — animated globe/orb with "GRIFFIN" wordmark
 const { useRef, useEffect: useEffectOrb } = React;
 
-function BronnOrb({ size = 460 }) {
+function GriffinOrb({ size = 460 }) {
   const orbRef = useRef(null);
 
   useEffectOrb(() => {
@@ -116,7 +116,7 @@ function BronnOrb({ size = 460 }) {
           fill="var(--text)" letterSpacing="0.08em"
           style={{ filter: 'drop-shadow(0 2px 12px rgba(245,239,230,0.3))' }}
         >
-          BRONN
+          GRIFFIN
         </text>
         <text x="230" y="268" textAnchor="middle" fontFamily="JetBrains Mono" fontSize="9" fill="rgba(245,239,230,0.5)" letterSpacing="0.3em">
           STRATEGY · CORE
@@ -126,4 +126,4 @@ function BronnOrb({ size = 460 }) {
   );
 }
 
-window.BronnOrb = BronnOrb;
+window.GriffinOrb = GriffinOrb;

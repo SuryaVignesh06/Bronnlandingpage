@@ -1,11 +1,10 @@
 {
-  "name": "bronn-landing-page",
+  "name": "Griffin-landing-page",
   "version": "1.0.0",
-  "description": "Premium landing page for Bronn",
-  "homepage": "https://SuryaVignesh06.github.io/Bronnlandingpage",
+  "description": "Premium landing page for Griffin",
+  "homepage": "https://SuryaVignesh06.github.io/Griffinlandingpage",
   "scripts": {
     "dev": "npx serve -p 3000",
-    "predeploy": "git add . && git commit -m 'Prepare for deploy' || true",
     "deploy": "gh-pages -d ."
   },
   "devDependencies": {
@@ -15,3 +14,4 @@
     "serve": "^14.2.4"
   }
 }
+

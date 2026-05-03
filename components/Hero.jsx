@@ -18,15 +18,15 @@ function Nav() {
         height: 64,
       }}>
         {/* Logo */}
-        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', color: 'var(--text)' }}>
+        <a href="index.html" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', color: 'var(--text)' }}>
           <span style={{
             width: 30, height: 30, borderRadius: 8,
             background: 'var(--ink)',
             display: 'grid', placeItems: 'center',
           }}>
-            <span className="head" style={{ color: 'var(--cream)', fontSize: 14, fontWeight: 600 }}>B</span>
+            <span className="head" style={{ color: 'var(--cream)', fontSize: 14, fontWeight: 600 }}>G</span>
           </span>
-          <span className="head" style={{ fontSize: 20, fontWeight: 500, letterSpacing: '0.06em' }}>BRONN</span>
+          <span className="head" style={{ fontSize: 20, fontWeight: 500, letterSpacing: '0.06em' }}>GRIFFIN</span>
         </a>
 
         {/* Center links */}
@@ -87,52 +87,50 @@ function Hero() {
 
   return (
     <section id="home" style={{ paddingTop: 120, paddingBottom: 80, position: 'relative', overflow: 'hidden' }}>
-      {/* Subtle background texture */}
+      {/* Hero background image */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,124,71,0.05) 0%, transparent 70%)',
+        backgroundImage: 'url("hero.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        opacity: 1,
+        pointerEvents: 'none',
+      }} />
+      {/* Bottom fade-out gradient */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(to bottom, transparent 60%, var(--bg) 100%)',
         pointerEvents: 'none',
       }} />
 
       <div className="container" style={{ textAlign: 'center' }}>
-        {/* Version badge */}
-        <div className="reveal in" style={{
-          display: 'inline-flex', alignItems: 'center', gap: 8,
-          padding: '6px 14px', borderRadius: 100,
-          border: '1px solid var(--line-med)',
-          background: 'var(--bg-2)',
-          marginBottom: 40,
-        }}>
-          <span style={{
-            width: 6, height: 6, borderRadius: '50%',
-            background: 'var(--green)',
-            animation: 'pulseDot 2s ease-in-out infinite',
-          }} />
-          <span className="eyebrow" style={{ color: 'var(--text-2)', letterSpacing: '0.12em', textTransform: 'none', fontSize: 12 }}>
-            Bronn 2.4 — now with scenario modeling
-          </span>
-        </div>
-
         {/* Headline */}
         <h1 className="reveal in reveal-d1" style={{
-          fontSize: 'clamp(48px, 7.5vw, 112px)',
-          fontFamily: 'Playfair Display, Georgia, serif',
-          fontWeight: 500,
-          letterSpacing: '-0.03em',
-          lineHeight: 1.05,
+          fontSize: 'clamp(44px, 8vw, 100px)',
+          fontFamily: 'Oswald, sans-serif',
+          fontWeight: 600,
+          letterSpacing: '0.02em',
+          lineHeight: 1.0,
+          textTransform: 'uppercase',
           color: 'var(--text)',
           marginBottom: 28,
           maxWidth: '14ch',
           margin: '0 auto 28px',
+          position: 'relative',
+          zIndex: 10,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}>
-          Your AI Business{' '}
-          <span style={{ color: 'var(--muted)', fontStyle: 'italic' }}>
+          <span>Your AI Business</span>
+          <span style={{ color: '#2d4a3e', fontStyle: 'normal', minHeight: '1.2em', display: 'block' }}>
             {words[wordIdx].substring(0, charIdx)}
             <span style={{
-              display: 'inline-block', width: 3,
-              height: 'clamp(38px, 6vw, 88px)',
-              background: 'var(--amber)',
-              verticalAlign: 'middle', marginLeft: 4,
+              display: 'inline-block', width: 4,
+              height: 'clamp(34px, 6vw, 78px)',
+              background: 'var(--text)',
+              verticalAlign: 'middle', marginLeft: 6,
               animation: 'blink 1s steps(1) infinite',
             }} />
           </span>
@@ -190,20 +188,6 @@ function Hero() {
             </div>
             <span style={{ fontSize: 16, marginLeft: 4, opacity: 0.5 }}>↓</span>
           </a>
-        </div>
-
-        {/* Trust meta */}
-        <div className="reveal in reveal-d4 mono" style={{
-          fontSize: 11, color: 'var(--muted)',
-          display: 'flex', gap: 20, justifyContent: 'center',
-          letterSpacing: '0.06em', flexWrap: 'wrap', marginBottom: 80,
-        }}>
-          {['v 2.4.1', 'macOS 12+ / Windows 10+', '84 mb', 'code-signed'].map((s, i) => (
-            <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-              {i > 0 && <span style={{ opacity: 0.3 }}>·</span>}
-              {s}
-            </span>
-          ))}
         </div>
       </div>
     </section>
